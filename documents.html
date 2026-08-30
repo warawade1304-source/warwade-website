@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="mr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>शासकीय योजना | ग्रामपंचायत</title>
+
+<style>
+body{margin:0;font-family:Arial,sans-serif;background:#f4f6f8;}
+.header{
+ text-align:center;padding:18px;font-size:24px;font-weight:bold;
+ background:linear-gradient(to right,#ff9933,#ffffff,#138808);
+}
+.menu{display:flex;flex-wrap:wrap;justify-content:center;background:#003f7f;}
+.menu a{color:#fff;padding:12px 16px;text-decoration:none;font-weight:bold;}
+.menu a:hover{background:#002a55;}
+
+.container{max-width:1200px;margin:auto;padding:20px;}
+.service-grid{
+ display:grid;
+ grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+ gap:20px;
+ margin-bottom:30px;
+}
+
+.service-card{
+ background:#ffffff;
+ padding:15px;
+ border-radius:12px;
+ box-shadow:0 2px 6px rgba(0,0,0,0.15);
+ border-left:6px solid #138808;
+}
+
+.service-card h3{
+ margin-top:0;
+ color:#003f7f;
+}
+
+.filter-box{display:flex;flex-wrap:wrap;gap:15px;margin-bottom:20px;}
+.filter-box select{
+ padding:10px;font-size:16px;border-radius:8px;
+ border:1px solid #003f7f;max-width:280px;
+}
+
+.card-grid{
+ display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+ gap:20px;
+}
+.card{
+ background:#fff;padding:15px;border-radius:12px;
+ box-shadow:0 2px 6px rgba(0,0,0,0.15);
+}
+.card h3{margin-top:0;color:#003f7f;}
+.label{font-weight:bold;color:#d84315;}
+
+.apply{
+ display:inline-block;margin-top:10px;
+ background:#28a745;color:white;padding:8px 12px;
+ border-radius:6px;text-decoration:none;font-weight:bold;
+}
+.offline{
+ display:inline-block;margin-top:10px;
+ background:#6c757d;color:white;padding:8px 12px;
+ border-radius:6px;font-weight:bold;
+}
+
+.footer{text-align:center;padding:12px;background:#003f7f;color:white;}
+</style>
+ <!-- ✅ GOOGLE ANALYTICS इथेच टाका -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-MKCTMSRM8R');
+</script>
+<!-- ✅ GOOGLE ANALYTICS END -->
+</head>
+
+<body>
+
+<div class="header">📜 शासकीय योजना – ग्रामपंचायत</div>
+
+<!-- Menu -->
+<div class="menu">
+    <a href="index.html">मुख्य पान</a>
+    <a href="panch-info.html">पंचायतीची माहिती</a>
+    <a href="documents.html">शासकीय योजना</a>
+    <a href="notices.html">नोटीस बोर्ड</a>
+    <a href="gallery.html">फोटो गॅलरी</a>
+    <a href="tax.html">मालमत्ता कर</a>
+    <a href="contact.html">संपर्क</a>
+</div>
+<h2 style="color:#003f7f;">🏛 ग्रामपंचायतमार्फत दिल्या जाणाऱ्या सेवा</h2>
+
+<div class="service-grid">
+
+ <!-- पाणीपुरवठा -->
+ <div class="service-card">
+  <h3>🚰 पाणीपुरवठा</h3>
+  <p>पाणीपुरवठा करणे, जलश्रोत दुरुस्ती व देखभाल</p>
+ </div>
+
+ <!-- स्वच्छता -->
+ <div class="service-card">
+  <h3>🧹 स्वच्छता</h3>
+  <p>कचरा संकलन, सार्वजनिक स्वच्छता उपक्रम, धूर फवारणी करणे</p>
+ </div>
+
+ <!-- कृषी -->
+ <div class="service-card">
+  <h3>🌾 कृषी सहाय्य</h3>
+  <p>शेतकरी मार्गदर्शन, खत व बियाणे योजना, कृषी सल्ला</p>
+ </div>
+
+ <!-- आरोग्य -->
+ <div class="service-card">
+  <h3>🏥 आरोग्य सेवा</h3>
+  <p>प्राथमिक आरोग्य उपकेंद्र, लसीकरण, आरोग्य शिबिरे</p>
+ </div>
+ <!-- दिवाबत्ती -->
+ <div class="service-card">
+  <h3> दिवाबत्ती</h3>
+  <p>सार्वजनिक ठिकाणी तसेच रस्त्याच्या कडेला लाईट ची सोय करणे</p>
+ </div>
+
+ <!-- जन्म -->
+ <div class="service-card">
+  <h3>जन्म, मृत्यू ,विवाह  नोंदणी</h3>
+  <p>जन्म , मृत्यू , विवाह नोंदणी आणि प्रमाणपत्र वितरण</p>
+ </div>
+
+
+
+ <!-- दारिद्र्य -->
+ <div class="service-card">
+  <h3>📄 दारिद्र्य रेषेखालील दाखला</h3>
+  <p>BPL असल्याबाबतचा दाखला</p>
+ </div>
+
+ <!-- मालमत्ता -->
+ <div class="service-card">
+  <h3>🏠 मालमत्ता प्रमाणपत्र</h3>
+  <p>मालमत्ता असल्याबाबतचा दाखला</p>
+ </div>
+
+ <!-- निराधार -->
+ <div class="service-card">
+  <h3>♿ निराधार दाखला</h3>
+  <p>निराधार असल्याबाबतचा दाखला</p>
+ </div>
+
+ <!-- थकबाकी -->
+ <div class="service-card">
+  <h3>थकबाकी नसलेचा दाखला</h3>
+  <p>घरपट्टी / पाणीपट्टी थकबाकी नसल्याचा दाखला</p>
+ </div>
+ </div>
+
+
+<div class="container">
+
+<h2 style="color:#003f7f;">विविध शासकीय योजना </h2>
+<div class="filter-box">
+ <select id="mainFilter" onchange="loadYojana()">
+  <option value="all">सर्व विभाग</option>
+  <option value="गृहनिर्माण">गृहनिर्माण</option>
+  <option value="शेतकरी">शेतकरी</option>
+  <option value="रोजगार">रोजगार</option>
+  <option value="महिला">महिला</option>
+  <option value="सामाजिक">सामाजिक न्याय</option>
+ </select>
+</div>
+
+<div class="card-grid" id="yojanaList"></div>
+</div>
+
+<div class="footer">© ग्रामपंचायत | महाराष्ट्र शासन</div>
+
+<script>
+const yojanaData = [
+
+/* ===== गृहनिर्माण ===== */
+{
+ main:"गृहनिर्माण",
+ name:"प्रधानमंत्री आवास योजना – ग्रामीण",
+ info:"ग्रामीण गरीब कुटुंबांसाठी पक्के घर",
+ eligibility:"SECC / BPL कुटुंब",
+ documents:"आधार, रेशन कार्ड, बँक खाते",
+ mode:"offline",
+ contact:"ग्रामपंचायत कार्यालय"
+},
+{
+ main:"गृहनिर्माण",
+ name:"रमाई घरकुल योजना",
+ info:"अनुसूचित जाती कुटुंबांसाठी घरकुल",
+ eligibility:"SC कुटुंब",
+ documents:"जात प्रमाणपत्र, आधार",
+ mode:"offline",
+ contact:"ग्रामपंचायत कार्यालय"
+},
+{
+ main:"गृहनिर्माण",
+ name:"शबरी घरकुल योजना",
+ info:"अनुसूचित जमाती कुटुंबांसाठी घरकुल",
+ eligibility:"ST कुटुंब",
+ documents:"जात प्रमाणपत्र",
+ mode:"offline",
+ contact:"ग्रामपंचायत / पंचायत समिती"
+},
+ {
+ main:"गृहनिर्माण",
+ name:"मोदी आवास योजना",
+ info:"इतर मागासवर्गीय प्रवर्गातील कुटुंबांसाठी घरकुल",
+ eligibility:"OBC कुटुंब",
+ documents:"जात प्रमाणपत्र",
+ mode:"offline",
+ contact:"ग्रामपंचायत / पंचायत समिती"
+},
+
+
+/* ===== रोजगार ===== */
+{
+ main:"रोजगार",
+ name:"महात्मा गांधी रोजगार हमी योजना",
+ info:"100 दिवस हमी रोजगार",
+ eligibility:"18 वर्षांवरील नागरिक",
+ documents:"जॉब कार्ड, आधार",
+ mode:"online",
+ link:"https://nrega.dord.gov.in/MGNREGA_new/Nrega_home.aspx",
+ contact:"ग्रामपंचायत"
+},
+
+/* ===== शेतकरी ===== */
+{
+ main:"शेतकरी",
+ name:"प्रधानमंत्री किसान सन्मान निधी",
+ info:"₹6000 वार्षिक आर्थिक सहाय्य",
+ eligibility:"पात्र शेतकरी",
+ documents:"7/12, आधार, बँक खाते",
+ mode:"online",
+ link:"https://pmkisan.gov.in",
+ contact:"कृषी कार्यालय"
+},
+{
+ main:"शेतकरी",
+ name:"पीक विमा योजना",
+ info:"नैसर्गिक आपत्तीपासून पीक संरक्षण",
+ eligibility:"शेतकरी",
+ documents:"7/12, आधार",
+ mode:"online",
+ link:"https://pmfby.gov.in",
+ contact:"कृषी सेवा केंद्र"
+},
+{
+ main:"शेतकरी",
+ name:"शेती अवजारे,ठिबक सिंचन, शेततळे,पाईपलाईन",
+ info:"ट्रक्टर व ट्रक्टर चलित औजारे , ठिबक सिंचन , तुषार सिंचन, मोटार , पाईप लाईन , कडबाकुट्टी, फवारणी पंप ",
+ eligibility:"पात्र शेतकरी",
+ documents:"7/12, आधार, बँक खाते",
+ mode:"online",
+ link:"https://mahadbt.maharashtra.gov.in/Farmer/AgriLogin/AgriLogin",
+ contact:"कृषी कार्यालय"
+},
+{
+ main:"शेतकरी",
+ name:"फार्मर आयडी तयार करणे",
+ info:"सर्व शेतकर्यांना विविध शासकीय योजनांचा लाभ घ्यायचा असेल तर फार्मर आयडी (शेतकरी ओळखपत्र )असणे अनिवार्य आहे.",
+ eligibility:"शेतकरी",
+ documents:"7/12, आधारकार्ड, आधारकार्ड ला मोबाईल नंबर लिंक असणे आवश्यक आहे.",
+ mode:"online",
+ link:"https://mhfr.agristack.gov.in/farmer-registry-mh/#/",
+ contact:"कृषी कार्यालय"
+},
+{
+ main:"शेतकरी",
+ name:"मागेल त्याला सौर उर्जा पंप",
+ info:"अनुसूचित जाती/जमातीमधील शेतकऱ्यांसाठी ९५% अनुदान, इतर शेतकऱ्यांसाठी ९०% अनुदान.",
+ eligibility:"शेतकरी",
+ documents:"7/12, आधारकार्ड, बँक पासबुक,फोटो,सामाईक क्षेत्र असल्यास संमतीपत्र, जातीचा दाखला .",
+ mode:"online",
+ link:"https://offgridmtsup.mahadiscom.in/AGSolarPumpMTS/PMKusumCons?uiActionName=getA1Form",
+ contact:"एम एस इ बी "
+},
+
+/* ===== महिला ===== */
+{
+ main:"महिला",
+ name:"मुख्यमंत्री माझी लाडकी बहीण योजना",
+ info:"पात्र महिलांसाठी आर्थिक सहाय्य",
+ eligibility:"21–65 वयोगट",
+ documents:"आधार, बँक खाते",
+ mode:"online",
+ link:"https://ladakibahin.maharashtra.gov.in",
+ contact:"महिला व बालकल्याण विभाग"
+},
+{
+ main:"महिला",
+ name:"उज्ज्वला गॅस योजना",
+ info:"BPL कुटुंबांना मोफत LPG कनेक्शन",
+ eligibility:"BPL कुटुंब",
+ documents:"रेशन कार्ड, आधार",
+ mode:"online",
+ link:"https://www.pmuy.gov.in",
+ contact:"गॅस एजन्सी"
+},
+
+/* ===== सामाजिक न्याय ===== */
+{
+ main:"सामाजिक",
+ name:"संजय गांधी निराधार योजना",
+ info:"विधवा / अपंग / निराधारांसाठी पेन्शन",
+ eligibility:"पात्र लाभार्थी",
+ documents:"उत्पन्न दाखला, आधार",
+  mode:"offline",
+ contact:"तहसील कार्यालय"
+},
+{
+ main:"सामाजिक",
+ name:"श्रावणबाळ सेवा योजना",
+ info:"ज्येष्ठ नागरिकांसाठी पेन्शन",
+ eligibility:"60 वर्षांवरील",
+ documents:"आधार",
+ mode:"offline",
+ contact:"तहसील कार्यालय"
+},
+{
+ main:"गृहनिर्माण",
+ name:"पंडीत दीनदयाल उपाध्याय घरकुल जागा खरेदी अर्थसहाय्य योजना",
+ info:"जागा उपलब्ध नसलेल्या कुटुंबांना जागा खरेदी करण्यासाठी रू.100,000/- पर्यंत अर्थसहाय्य उपलब्ध",
+ eligibility:"घरकुल योजनेतील घरकुल पात्र परंतु घरकुल बांधकामासाठी जागा उपलब्ध नसलेले कुटुंब",
+ documents:"आधार कार्ड बॅक पासबुक झेरॉक्स जागा खरेदी कागदपत्रे",
+ mode:"offline",
+ contact:"ग्रामपंचायत / पंचायत समिती"
+},
+{
+ main:"शेतकरी",
+ name:"कृषी कर्ज - किसान क्रेडीट कार्ड",
+ info:"शेतकऱ्यांना पिकाच्या लागवडीसाठी / काढणीसाठी पुरेसे कर्ज उपलब्ध करून देणे.  ",
+ eligibility:"शेतकरी",
+ documents:"आधारकार्ड,फार्मर आयडी, बँक पासबुक.",
+ mode:"online",
+ link:"https://www.jansamarth.in/home",
+ contact:"बँक"
+}
+];
+
+function loadYojana(){
+ const main=document.getElementById("mainFilter").value;
+ const list=document.getElementById("yojanaList");
+ list.innerHTML="";
+
+ yojanaData.filter(y=>main==="all"||y.main===main)
+ .forEach(y=>{
+  list.innerHTML+=`
+  <div class="card">
+   <h3>${y.name}</h3>
+   <p><span class="label">तपशील:</span> ${y.info}</p>
+   <p><span class="label">पात्रता:</span> ${y.eligibility}</p>
+   <p><span class="label">कागदपत्रे:</span> ${y.documents}</p>
+   <p><span class="label">संपर्क:</span> ${y.contact}</p>
+   ${
+    y.mode==="online"
+    ? `<a class="apply" href="${y.link}" target="_blank">Online अर्ज</a>`
+    : `<span class="offline">Offline अर्ज</span>`
+   }
+  </div>`;
+ });
+}
+loadYojana();
+</script>
+
+</body>
+</html>
+
+
+
