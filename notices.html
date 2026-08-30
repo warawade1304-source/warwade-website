@@ -238,6 +238,8 @@ const apiKey = "b49514c717e32754db5ef2f43c71e93c";
 // हवामान आपोआप दिसेल. Geocoding अयशस्वी झालं (उदा. इंटरनेट/API मर्यादा) तर आधीचे माढ्याचे lat/lon
 // शेवटचा पर्याय (fallback) म्हणून वापरतो, जेणेकरून विजेट पूर्ण बंद पडत नाही.
 const geoQuery = "माढा, सोलापूर, Maharashtra, IN";
+const manualLat = "17.969993281470792";
+const manualLon = "75.31354508245276";
 const fallbackLat = 17.96, fallbackLon = 75.31; // Madha (शेवटचा पर्याय)
 
 // English → Marathi mapping
@@ -328,17 +330,23 @@ fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&app
 });
 }
 
-// प्रथम पत्त्यावरून खरं ठिकाण शोधायचा प्रयत्न — सापडलं नाही तर माढ्याचे जुने lat/lon वापरतो
-fetch(`https://api.openweathermap.org/geo/1.0/direct?q=${encodeURIComponent(geoQuery)}&limit=1&appid=${apiKey}`)
-.then(r => r.json())
-.then(geo => {
-  if(Array.isArray(geo) && geo.length){
-    loadWeather(geo[0].lat, geo[0].lon, geoQuery);
-  } else {
-    loadWeather(fallbackLat, fallbackLon, geoQuery);
-  }
-})
-.catch(() => loadWeather(fallbackLat, fallbackLon, geoQuery));
+// गावाचे lat/lon (स्थान विभागात) भरलेले असतील तर तेच थेट वापरतो — सर्वात अचूक, geocoding लागतच नाही.
+// रिकामे असतील तरच तालुका/जिल्ह्यावरून खरं ठिकाण शोधायचा प्रयत्न — तेही सापडलं नाही तर माढ्याचे जुने lat/lon.
+const manualLatNum = parseFloat(manualLat), manualLonNum = parseFloat(manualLon);
+if(!isNaN(manualLatNum) && !isNaN(manualLonNum)){
+  loadWeather(manualLatNum, manualLonNum, geoQuery);
+} else {
+  fetch(`https://api.openweathermap.org/geo/1.0/direct?q=${encodeURIComponent(geoQuery)}&limit=1&appid=${apiKey}`)
+  .then(r => r.json())
+  .then(geo => {
+    if(Array.isArray(geo) && geo.length){
+      loadWeather(geo[0].lat, geo[0].lon, geoQuery);
+    } else {
+      loadWeather(fallbackLat, fallbackLon, geoQuery);
+    }
+  })
+  .catch(() => loadWeather(fallbackLat, fallbackLon, geoQuery));
+}
 </script>
 </body>
 </html>
