@@ -238,6 +238,7 @@ const apiKey = "b49514c717e32754db5ef2f43c71e93c";
 // हवामान आपोआप दिसेल. Geocoding अयशस्वी झालं (उदा. इंटरनेट/API मर्यादा) तर आधीचे माढ्याचे lat/lon
 // शेवटचा पर्याय (fallback) म्हणून वापरतो, जेणेकरून विजेट पूर्ण बंद पडत नाही.
 const geoQuery = "माढा, सोलापूर, Maharashtra, IN";
+const villageName = "वरवडे (ता. माढा)";
 const manualLat = "17.969993281470792";
 const manualLon = "75.31354508245276";
 const fallbackLat = 17.96, fallbackLon = 75.31; // Madha (शेवटचा पर्याय)
@@ -334,7 +335,7 @@ fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&app
 // रिकामे असतील तरच तालुका/जिल्ह्यावरून खरं ठिकाण शोधायचा प्रयत्न — तेही सापडलं नाही तर माढ्याचे जुने lat/lon.
 const manualLatNum = parseFloat(manualLat), manualLonNum = parseFloat(manualLon);
 if(!isNaN(manualLatNum) && !isNaN(manualLonNum)){
-  loadWeather(manualLatNum, manualLonNum, geoQuery);
+  loadWeather(manualLatNum, manualLonNum, villageName || geoQuery);
 } else {
   fetch(`https://api.openweathermap.org/geo/1.0/direct?q=${encodeURIComponent(geoQuery)}&limit=1&appid=${apiKey}`)
   .then(r => r.json())
