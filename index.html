@@ -166,7 +166,7 @@ h2{
     </marquee>
 </div>
 
-<!-- 🖼️ Gallery Auto Slideshow -->
+<!-- 🖼️ Gallery Auto Slideshow — फोटो अपलोड केला नसेल तर हा संपूर्ण विभागच लपवला जातो (JS मध्ये) -->
 <div id="gallerySlider" style="
 max-width:1100px;
 margin:15px auto;
@@ -175,6 +175,7 @@ overflow:hidden;
 border-radius:12px;
 box-shadow:0 3px 8px rgba(0,0,0,0.2);
 background:#000;
+display:none;
 ">
 
   <img id="sliderImg" src="" style="
@@ -196,7 +197,6 @@ background:#000;
   text-align:center;
   font-weight:bold;
   ">
-  तुळजा भवानी मंदिर
   </div>
 
 </div>
@@ -474,15 +474,17 @@ let galleryPhotos = [];
 let slideNo = 0;
 
 function startGallerySlider(){
+    let box = document.getElementById("gallerySlider");
     let img = document.getElementById("sliderImg");
     let cap = document.getElementById("sliderCaption");
-    if(!galleryPhotos.length)return; // अजून एकही फोटो अपलोड केलेला नसेल तर स्लायडर काहीच करत नाही
+    if(!galleryPhotos.length)return; // अजून एकही फोटो अपलोड केलेला नसेल तर स्लायडर काहीच करत नाही (लपलेलाच राहतो)
 
+    box.style.display = "block";
     slideNo++;
     if(slideNo >= galleryPhotos.length){ slideNo = 0; }
 
     img.src = galleryPhotos[slideNo].img;
-    cap.innerHTML = galleryPhotos[slideNo].cap;
+    cap.innerHTML = galleryPhotos[slideNo].cap || "";
 }
 
 setInterval(startGallerySlider, 3000); // 3 सेकंदांनी slide बदलेल
