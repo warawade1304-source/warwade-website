@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="mr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>नोटीस बोर्ड | ग्रामपंचायत वरवडे</title>
+
+<style>
+body {
+    margin:0;
+    font-family: Arial,sans-serif;
+    background:#f4f6f8;
+}
+.top-header {
+    text-align:center;
+    padding:20px;
+    font-size:26px;
+    font-weight:bold;
+    background: linear-gradient(to right,#ff9933,#ffffff,#138808);
+    color:#000;
+}
+.menu {
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    background:#003f7f;
+}
+.menu a {
+    color:#fff;
+    padding:12px 16px;
+    text-decoration:none;
+    font-weight:bold;
+}
+.menu a:hover {
+    background:#002a55;
+}
+.news-bar {
+    display:flex;
+    align-items:center;
+    background:#fff3cd;
+    border-top:2px solid #ff9800;
+    border-bottom:2px solid #ff9800;
+    padding:8px 10px;
+    font-weight:bold;
+}
+.news-title {
+    color:#d84315;
+    margin-right:10px;
+    white-space:nowrap;
+}
+.container {
+    max-width:1000px;
+    margin:20px auto;
+    background:white;
+    padding:20px;
+    border-radius:10px;
+    box-shadow:0 2px 6px rgba(0,0,0,0.1);
+}
+.notice-card {
+    border:1px solid #ccc;
+    border-left:5px solid #003f7f;
+    margin-bottom:15px;
+    padding:12px 15px;
+    background:#fafafa;
+    border-radius:5px;
+}
+.notice-card h3 {
+    margin:0 0 5px 0;
+    color:#003f7f;
+}
+.notice-card p {
+    margin:0;
+    font-size:15px;
+}
+.notice-date {
+    font-size:13px;
+    color:#555;
+    margin-bottom:5px;
+}
+
+/* ✅ NEW SECTIONS */
+.section {
+    margin-top:25px;
+    padding:15px;
+    background:#ffffff;
+    border-radius:8px;
+    border:1px solid #ddd;
+}
+.section h2 {
+    margin-top:0;
+    color:#b30000;
+}
+.section a {
+    display:block;
+    padding:6px 0;
+    text-decoration:none;
+    color:#003366;
+    font-weight:bold;
+}
+iframe {
+    width:100%;
+    height:300px;
+    border:none;
+    border-radius:8px;
+}
+</style>
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-MKCTMSRM8R"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-MKCTMSRM8R');
+</script>
+</head>
+
+<body>
+
+<div class="top-header">🌾 ग्रामपंचायत वरवडे – नोटीस बोर्ड</div>
+
+<div class="menu">
+    <a href="index.html">मुख्य पान</a>
+    <a href="panch-info.html">पंचायतीची माहिती</a>
+    <a href="documents.html">शासकीय योजना</a>
+    <a href="notices.html">नोटीस बोर्ड</a>
+    <a href="gallery.html">फोटो गॅलरी</a>
+    <a href="tax.html">मालमत्ता कर</a>
+    <a href="contact.html">संपर्क</a>
+</div>
+
+<div class="news-bar">
+    <span class="news-title">📰 ताज्या सूचना :</span>
+    <marquee scrollamount="5">
+        🏠 घरपट्टी व पाणीपट्टी भरून ग्रामपंचायत ला सहकार्य करावे. &nbsp;|&nbsp; 🧹 स्वच्छता मोहिमेत सहभागी व्हा
+    </marquee>
+</div>
+
+<div class="container">
+
+    
+<h2>सर्व नोटीसेस / सूचना</h2>
+
+<div class="notice-card"><p style="color:#999">सध्या कोणत्याही नवीन सूचना नाहीत.</p></div>
+
+<!-- 🌦️ WEATHER -->
+<div class="section">
+<h2>🌦️ आजचे हवामान</h2>
+<div id="weather">लोड होत आहे...</div>
+</div>
+
+<div class="section">
+  <h2>📰 मराठी वर्तमानपत्रे</h2>
+
+  <div style="display:flex; flex-wrap:wrap; align-items:center; gap:15px;">
+    <a href="https://www.esakal.com/" target="_blank">
+      <img src="images/logos/esakal.png" style="height:28px;">
+    </a>
+
+    <a href="https://www.lokmat.com/" target="_blank">
+      <img src="images/logos/lokmat.png" style="height:28px;">
+    </a>
+
+    <a href="https://maharashtratimes.com/" target="_blank">
+      <img src="images/logos/maharashtratimes.png" style="height:28px;">
+    </a>
+
+    <a href="https://www.loksatta.com/" target="_blank">
+      <img src="images/logos/loksatta.png" style="height:28px;">
+    </a>
+  </div>
+</div>
+
+<div class="section" style="margin-top:20px;">
+  <h2>📺 मराठी न्यूज चॅनेल</h2>
+
+  <div style="display:flex; flex-wrap:wrap; align-items:center; gap:15px;">
+    <a href="https://www.tv9marathi.com/" target="_blank">
+      <img src="images/logos/tv9.png" style="height:28px;">
+    </a>
+
+    <a href="https://www.abpmajha.com/" target="_blank">
+      <img src="images/logos/abpmajha.png" style="height:28px;">
+    </a>
+
+    <a href="https://zeenews.india.com/marathi" target="_blank">
+      <img src="images/logos/zee24taas.png" style="height:28px;">
+    </a>
+
+    <a href="https://www.news18marathi.com/" target="_blank">
+      <img src="images/logos/news18.png" style="height:28px;">
+    </a>
+  </div>
+</div>
+
+<div class="section" style="margin-top:20px;">
+  <h2>🏛️ उपयुक्त शासकीय पंचायत अ‍ॅप्स</h2>
+
+  <div style="display:flex; flex-wrap:wrap; align-items:center; gap:15px;">
+    <a href="https://play.google.com/store/apps/details?id=com.meri_panchayat" target="_blank">
+      <img src="images/logos/meri-panchayat.png" style="height:40px;">
+    </a>
+
+    <a href="https://play.google.com/store/apps/details?id=com.nic.gramsamvaad" target="_blank">
+      <img src="images/logos/gramsamvad.png" style="height:40px;">
+    </a>
+
+    <a href="https://play.google.com/store/apps/details?id=com.gsnirnay.app" target="_blank">
+      <img src="images/logos/panchayat-nirnay.png" style="height:40px;">
+    </a>
+  </div>
+</div>
+
+<div class="section" style="margin-top:20px;">
+  <h2>🧺🍅🥕🧅🌶️आजचे बाजारभाव</h2>
+
+  <div style="display:flex; flex-wrap:wrap; align-items:center; gap:15px;">
+    <a class="btn" href="https://www.commoditymarketlive.com/mandi-price-market/solapur-apmc" target="_blank">
+  👉 सोलापूर APMC बाजारभाव पहा
+  </a>
+    <a class="btn" href="https://www.krushikranti.com/bajarbhav/solapur-bajar-bhav-today" target="_blank">
+  👉 कृषीक्रांती बाजारभाव पहा
+  </a>
+
+    
+  </div>
+</div>
+
+</div>
+
+<script>
+const apiKey = "b49514c717e32754db5ef2f43c71e93c";
+
+// पत्ता/तालुका/जिल्ह्यावरून हवामान — आधी इथे वरवडे (ता. माढा) चे lat/lon कायमचे (hardcoded) होते,
+// त्यामुळे कुठल्याही ग्रामपंचायतीसाठी वरवडेचंच हवामान दिसायचं. आता सॉफ्टवेअरमध्ये भरलेल्या
+// तालुका/जिल्ह्यावरून प्रथम OpenWeatherMap च्या Geocoding API ने खरे lat/lon शोधतो (त्याच appid ने,
+// वेगळी key लागत नाही), आणि तेच पुढे हवामानासाठी वापरतो — त्यामुळे कुठल्याही गावासाठी योग्य/जवळचं
+// हवामान आपोआप दिसेल. Geocoding अयशस्वी झालं (उदा. इंटरनेट/API मर्यादा) तर आधीचे माढ्याचे lat/lon
+// शेवटचा पर्याय (fallback) म्हणून वापरतो, जेणेकरून विजेट पूर्ण बंद पडत नाही.
+const geoQuery = "माढा, सोलापूर, Maharashtra, IN";
+const fallbackLat = 17.96, fallbackLon = 75.31; // Madha (शेवटचा पर्याय)
+
+// English → Marathi mapping
+function weatherMarathi(main){
+  switch(main){
+    case "Clear": return "स्वच्छ आकाश";
+    case "Clouds": return "ढगाळ वातावरण";
+    case "Rain": return "पाऊस";
+    case "Drizzle": return "रिमझिम पाऊस";
+    case "Thunderstorm": return "मेघगर्जना व वादळ";
+    case "Snow": return "हिमवृष्टी";
+    case "Mist": return "धुके";
+    case "Haze": return "धुरकट वातावरण";
+    case "Fog": return "दाट धुके";
+    case "Smoke": return "धूर";
+    case "Dust": return "धूळ";
+    case "Sand": return "वाळूची धूळ";
+    case "Ash": return "राखेचे कण";
+    case "Squall": return "जोरदार वारे";
+    case "Tornado": return "चक्रीवादळ";
+    default: return "हवामान स्थिती";
+  }
+}
+
+function loadWeather(lat, lon, placeLabel){
+/* 🔹 CURRENT WEATHER */
+fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`)
+.then(r => r.json())
+.then(current => {
+
+  const temp = current.main.temp;
+  const humidity = current.main.humidity;
+  const statusMR = weatherMarathi(current.weather[0].main);
+
+  /* 🔹 FORECAST (Rain Probability) */
+  fetch(`https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`)
+  .then(r => r.json())
+  .then(forecast => {
+
+    // पुढील 3 तासातील पाऊस शक्यता
+    let pop = forecast.list[0].pop; 
+    let rainChance = Math.round(pop * 100);
+
+   document.getElementById("weather").innerHTML =
+`<div style="
+    display:grid; 
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); 
+    gap:15px; 
+    font-family:Arial,sans-serif;
+    margin-top:10px;
+">
+
+  <!-- तापमान -->
+  <div style="border-radius:12px; padding:18px 10px; text-align:center; background:#e8f4ff; color:#0b5ed7;">
+    <div style="font-size:26px; font-weight:bold; margin-bottom:5px;">${temp}°C</div>
+    <div style="font-size:15px; font-weight:600;">🌡️ तापमान</div>
+  </div>
+
+  <!-- हवामान स्थिती -->
+  <div style="border-radius:12px; padding:18px 10px; text-align:center; background:#eaf7ea; color:#1e7e34;">
+    <div style="font-size:26px; font-weight:bold; margin-bottom:5px;">${statusMR}</div>
+    <div style="font-size:15px; font-weight:600;">☁️ स्थिती</div>
+  </div>
+
+  <!-- पाऊस शक्यता -->
+  <div style="border-radius:12px; padding:18px 10px; text-align:center; background:#fff3e0; color:#ef6c00;">
+    <div style="font-size:26px; font-weight:bold; margin-bottom:5px;">${rainChance}%</div>
+    <div style="font-size:15px; font-weight:600;">🌧️ पाऊस शक्यता</div>
+  </div>
+
+  <!-- आर्द्रता -->
+  <div style="border-radius:12px; padding:18px 10px; text-align:center; background:#f3e8ff; color:#6f42c1;">
+    <div style="font-size:26px; font-weight:bold; margin-bottom:5px;">${humidity}%</div>
+    <div style="font-size:15px; font-weight:600;">💧 आर्द्रता</div>
+  </div>
+
+</div>
+
+<p style="text-align:center; font-weight:bold; margin-top:10px;">
+📍 ठिकाण : ${placeLabel}
+</p>`;
+
+  });
+})
+.catch(() => {
+  document.getElementById("weather").innerHTML =
+  "⚠️ हवामान माहिती सध्या उपलब्ध नाही";
+});
+}
+
+// प्रथम पत्त्यावरून खरं ठिकाण शोधायचा प्रयत्न — सापडलं नाही तर माढ्याचे जुने lat/lon वापरतो
+fetch(`https://api.openweathermap.org/geo/1.0/direct?q=${encodeURIComponent(geoQuery)}&limit=1&appid=${apiKey}`)
+.then(r => r.json())
+.then(geo => {
+  if(Array.isArray(geo) && geo.length){
+    loadWeather(geo[0].lat, geo[0].lon, geoQuery);
+  } else {
+    loadWeather(fallbackLat, fallbackLon, geoQuery);
+  }
+})
+.catch(() => loadWeather(fallbackLat, fallbackLon, geoQuery));
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
