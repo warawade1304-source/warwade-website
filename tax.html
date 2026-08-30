@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="mr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>मालमत्ता कर बिल | ग्रामपंचायत</title>
+
+<style>
+body{font-family:Arial;background:#f3f7ff;margin:0}
+
+/* Header */
+.top-header{
+    background:linear-gradient(90deg,#FF9933,#ffffff,#128807);
+    padding:18px;
+    font-size:26px;
+    font-weight:bold;
+    text-align:center;
+}
+
+/* Menu */
+.menu{
+    background:#003f7f;
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+}
+.menu a{
+    color:white;
+    padding:12px 16px;
+    text-decoration:none;
+    font-weight:bold;
+}
+.menu a:hover{
+    background:#002a55;
+}
+
+/* Search */
+.search-box{text-align:center;margin:20px}
+.search-box input{
+    width:70%;
+    padding:12px;
+    font-size:18px;
+    border-radius:8px;
+    border:2px solid #003f7f;
+}
+
+/* Bill */
+.bill-box{
+    max-width:900px;
+    margin:20px auto;
+    background:#fff;
+    padding:15px;
+    border-radius:8px;
+    box-shadow:0 2px 6px rgba(0,0,0,.15)
+}
+
+.table{
+    width:100%;
+    border-collapse:collapse;
+    margin-top:10px
+}
+.table th,.table td{
+    border:1px solid #003f7f;
+    padding:6px;
+    text-align:center
+}
+.table th{
+    background:#003f7f;
+    color:#fff
+}
+
+.summary-box{
+    margin-top:15px;
+    padding:12px;
+    border:2px dashed #ff6600;
+    background:#fff4e6;
+    font-weight:bold;
+    text-align:center
+}
+
+/* QR */
+.qr-box{
+    display:flex;
+    justify-content:center;
+    gap:80px;
+    margin-top:25px;
+    flex-wrap:wrap
+}
+.qr-box img{width:170px}
+.qr-box div{text-align:center}
+</style>
+    <!-- ✅ GOOGLE ANALYTICS इथेच टाका -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-MKCTMSRM8R');
+</script>
+<!-- ✅ GOOGLE ANALYTICS END -->
+</head>
+
+<body>
+
+<!-- Header -->
+<div class="top-header">💰 ग्रामपंचायत मालमत्ता कर माहिती</div>
+<!-- Menu -->
+<div class="menu">
+    <a href="index.html">मुख्य पान</a>
+    <a href="panch-info.html">पंचायतीची माहिती</a>
+    <a href="documents.html">शासकीय योजना</a>
+    <a href="notices.html">नोटीस बोर्ड</a>
+    <a href="gallery.html">फोटो गॅलरी</a>
+    <a href="tax.html">मालमत्ता कर</a>
+    <a href="contact.html">संपर्क</a>
+</div>
+
+<div class="search-box">
+  <div style="position:relative;display:inline-block;width:70%;">
+    
+    <input type="text" id="searchInput"
+     placeholder="नाव मराठी मध्ये टाकावे..."
+     onclick="showDropdown()"
+     onkeyup="filterDropdown()"
+     style="width:100%;">
+
+    <select id="nameDropdown" size="6"
+     onchange="selectName()"
+     style="
+       position:absolute;
+       top:100%;
+       left:0;
+       width:100%;
+        font-size:18px;
+       margin-top:2px;
+       display:none;
+       z-index:99;
+     ">
+    </select>
+
+  </div>
+</div>
+
+
+<div id="result"></div>
+
+<script>
+let data=[{"अ.क्र":"1","मिळकत धारकाचे नाव":"sachin uttam gaikwad","मिळकत नंबर":"50","मागील घरपट्टी कर":"2000","चालू घरपट्टी कर":"145","एकूण घरपट्टी कर":"2145","मागील दिवाबत्ती कर":"200","चालू दिवाबत्ती कर":"25","एकूण दिवाबत्ती कर":"225","मागील आरोग्य कर":"200","चालू आरोग्य कर":"25","एकूण आरोग्य कर":"225","मागील पाणीपट्टी कर":"0","चालू पाणीपट्टी कर":"0","एकूण पाणीपट्टी कर":"0","मागील पडसर जमीन कर":"0","चालू पडसर जमीन कर":"0","एकूण पडसर जमीन कर":"0","मागील दंड कर":"0","चालू दंड कर":"0","एकूण दंड कर":"0","V":"2400","चालू एकूण मागणी":"195","एकूण मागणी":"2595"},{"अ.क्र":"2","मिळकत धारकाचे नाव":"atharv","मिळकत नंबर":"63","मागील घरपट्टी कर":"5090","चालू घरपट्टी कर":"5085","एकूण घरपट्टी कर":"10175","मागील दिवाबत्ती कर":"250","चालू दिवाबत्ती कर":"25","एकूण दिवाबत्ती कर":"275","मागील आरोग्य कर":"250","चालू आरोग्य कर":"25","एकूण आरोग्य कर":"275","मागील पाणीपट्टी कर":"0","चालू पाणीपट्टी कर":"0","एकूण पाणीपट्टी कर":"0","मागील पडसर जमीन कर":"0","चालू पडसर जमीन कर":"0","एकूण पडसर जमीन कर":"0","मागील दंड कर":"0","चालू दंड कर":"0","एकूण दंड कर":"0","V":"5590","चालू एकूण मागणी":"5135","एकूण मागणी":"10725"}];
+
+/* 🔽 Dropdown fill – page load ला */
+window.onload = () => {
+  let dd = document.getElementById("nameDropdown");
+  data
+   .sort((a,b)=>
+     a["मिळकत धारकाचे नाव"]
+     .localeCompare(b["मिळकत धारकाचे नाव"],'mr')
+   )
+   .forEach(r=>{
+     let o = document.createElement("option");
+     o.value = r["मिळकत नंबर"];
+     o.text  = r["मिळकत धारकाचे नाव"] +
+               " (घर नं. " + r["मिळकत नंबर"] + ")";
+     dd.appendChild(o);
+   });
+};
+
+/* dropdown show */
+function showDropdown(){
+  nameDropdown.style.display="block";
+}
+
+/* typing filter */
+function filterDropdown(){
+  let t = searchInput.value.trim();
+  nameDropdown.style.display = "block";
+
+  [...nameDropdown.options].forEach(o=>{
+    let text = o.text.trim();   // नाव + घर नं
+    let val  = o.value.trim();  // घर नं
+
+    if(t === ""){
+      o.style.display = "none";
+      return;
+    }
+
+    /* 🔢 number टाकला → exact match */
+    if(!isNaN(t)){
+      o.style.display = (val === t) ? "" : "none";
+    }
+    /* 👤 नाव टाकलं → partial match */
+    else{
+      o.style.display = text.includes(t) ? "" : "none";
+    }
+  });
+}
+
+
+/* dropdown select */
+function selectName(){
+  searchInput.value = nameDropdown.value;
+  nameDropdown.style.display="none";
+  doSearch(); // जुनी search function call
+}
+
+function doSearch(){
+let t=document.getElementById("searchInput").value.trim();
+let out="";
+
+data.filter(r=>r["मिळकत धारकाचे नाव"].includes(t)||r["मिळकत नंबर"] === t)
+.forEach(r=>{
+
+let ph=+r["मागील घरपट्टी कर"], ch=+r["चालू घरपट्टी कर"];
+let pl=+r["मागील दिवाबत्ती कर"], cl=+r["चालू दिवाबत्ती कर"];
+let pa=+r["मागील आरोग्य कर"], ca=+r["चालू आरोग्य कर"];
+let pw=+r["मागील पाणीपट्टी कर"], cw=+r["चालू पाणीपट्टी कर"];
+let pp=+r["मागील पडसर जमीन कर"], cp=+r["चालू पडसर जमीन कर"];
+
+let prevTotal=ph+pl+pa+pp+pw;
+let currTotal=ch+cl+ca+cp+cw;
+
+let gharQR = (ph+pl+pa+pp) + (ch+cl+ca+cp);
+let paniQR = pw + cw;
+
+
+out+=`
+<div class="bill-box">
+<h3 style="text-align:center;">नमुना 9(क) – कर बिल</h3>
+
+<p><b>नाव:</b> ${r["मिळकत धारकाचे नाव"]}</p>
+<p><b>घर क्रमांक:</b> ${r["मिळकत नंबर"]}</p>
+
+<table class="table">
+<tr><th>क्र</th><th>कर</th><th>थकबाकी</th><th>चालू</th><th>एकूण</th></tr>
+<tr><td>1</td><td>घरपट्टी</td><td>${ph}</td><td>${ch}</td><td>${ph+ch}</td></tr>
+<tr><td>2</td><td>दिवाबत्ती</td><td>${pl}</td><td>${cl}</td><td>${pl+cl}</td></tr>
+<tr><td>3</td><td>आरोग्य</td><td>${pa}</td><td>${ca}</td><td>${pa+ca}</td></tr>
+<tr><td>4</td><td>पाणीपट्टी</td><td>${pw}</td><td>${cw}</td><td>${pw+cw}</td></tr>
+<tr><td>5</td><td>पडसर</td><td>${pp}</td><td>${cp}</td><td>${pp+cp}</td></tr>
+<tr style="font-weight:bold">
+<td colspan="2">एकूण</td>
+<td>${prevTotal}</td>
+<td>${currTotal}</td>
+<td>${prevTotal+currTotal}</td>
+</tr>
+</table>
+
+<div class="qr-box">
+
+<div>
+<h4>🏠 घरपट्टी QR</h4>
+<img src="" style="width:180px;height:180px;object-fit:contain">
+
+<p style="font-weight:bold; margin-top:8px;"> ₹ ${gharQR}
+</p>
+</div>
+
+<div>
+<h4>💧 पाणीपट्टी QR</h4>
+<img src="" style="width:180px;height:180px;object-fit:contain">
+
+<p style="font-weight:bold; margin-top:8px;"> ₹ ${paniQR}
+</p>
+
+</div>
+
+</div>
+
+
+<p> टीप :- १. वर दिलेला QR कोड स्कॅन करून घरपट्टी आणि पाणीपट्टी भरावी. नोट मध्ये मालमत्ता क्रमांक आणि नाव टाकावे. </p>
+<p> टीप :- २. ऑनलाईन भरणा केल्यानंतर स्क्रीनशॉट काढून ग्रामपंचायत कार्यालयाशी संपर्क साधून या व्हॉट्सअप वर पाठवावा. </p>
+</div>`;
+});
+
+document.getElementById("result").innerHTML=out||"डेटा सापडला नाही";
+}
+</script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
