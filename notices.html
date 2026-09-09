@@ -103,6 +103,46 @@ iframe {
     border:none;
     border-radius:8px;
 }
+
+/* 📄 PDF कागदपत्रे */
+.pdf-grid {
+    display:flex;
+    flex-wrap:wrap;
+    gap:15px;
+    margin-top:10px;
+}
+.pdf-item {
+    width:140px;
+    background:#fafafa;
+    border:1px solid #ddd;
+    border-radius:8px;
+    padding:10px;
+    text-align:center;
+    box-sizing:border-box;
+}
+.pdf-item a {
+    display:block;
+    padding:0;
+    text-decoration:none;
+    color:inherit;
+}
+.pdf-icon {
+    font-size:36px;
+    line-height:1;
+}
+.pdf-name {
+    font-size:13px;
+    font-weight:bold;
+    color:#003366;
+    margin-top:6px;
+    word-break:break-word;
+}
+.pdf-desc {
+    font-size:12px;
+    color:#555;
+    margin-top:6px;
+    word-break:break-word;
+}
 </style>
 
 <!-- Google Analytics -->
@@ -141,12 +181,22 @@ gtag('config', 'G-MKCTMSRM8R');
     
 <h2>सर्व नोटीसेस / सूचना</h2>
 
-<div class="notice-card"><p style="color:#999">सध्या कोणत्याही नवीन सूचना नाहीत.</p></div>
+<div class="notice-card"><div class="notice-date"></div><h3></h3><p></p></div>
 
 <!-- 🌦️ WEATHER -->
 <div class="section">
 <h2>🌦️ आजचे हवामान</h2>
 <div id="weather">लोड होत आहे...</div>
+</div>
+
+<!-- 📄 NOTICE BOARD PDFs -->
+<div class="section">
+<h2>📄 सूचना / परिपत्रके (PDF)</h2>
+<div class="pdf-grid">
+<div class="pdf-item"><a href="notice-pdfs/pdf0.pdf" target="_blank"><div class="pdf-icon">📄</div><div class="pdf-name">BirthCertificate5619710800304.PDF</div></a></div>
+<div class="pdf-item"><a href="notice-pdfs/pdf1.pdf" target="_blank"><div class="pdf-icon">📄</div><div class="pdf-name">BirthCertificate5619710800304.PDF</div></a></div>
+<div class="pdf-item"><a href="notice-pdfs/pdf2.pdf" target="_blank"><div class="pdf-icon">📄</div><div class="pdf-name">BirthCertificate5619710800304.PDF</div></a></div>
+</div>
 </div>
 
 <div class="section">
@@ -239,8 +289,8 @@ const apiKey = "b49514c717e32754db5ef2f43c71e93c";
 // शेवटचा पर्याय (fallback) म्हणून वापरतो, जेणेकरून विजेट पूर्ण बंद पडत नाही.
 const geoQuery = "माढा, सोलापूर, Maharashtra, IN";
 const villageName = "वरवडे (ता. माढा)";
-const manualLat = "17.969993281470792";
-const manualLon = "75.31354508245276";
+const manualLat = "";
+const manualLon = "";
 const fallbackLat = 17.96, fallbackLon = 75.31; // Madha (शेवटचा पर्याय)
 
 // English → Marathi mapping
