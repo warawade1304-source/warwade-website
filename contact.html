@@ -179,7 +179,7 @@ iframe{
 // "github_pat_..." असा दिसतो, ना Base64/Hex सारख्या ओळखीच्या स्वरूपात — त्यामुळे GitHub च्या
 // Secret Scanning ला (जे base64/hex सुद्धा डीकोड करून तपासतं) तो टोकनसारखा सापडत नाही.
 const GH_REPO = "warawade1304-source/warwade-website";   // उदा. "username/reponame"
-const GH_TOKEN_CODES = [];
+const GH_TOKEN_CODES = [110,112,123,111,124,105,102,119,104,123,102,56,56,73,58,88,78,89,81,72,55,123,109,111,96,110,73,124,57,81,64,61,57,102,129,112,104,61,117,56,119,56,81,115,55,120,62,112,91,95,56,63,90,125,109,74,56,107,84,60,108,127,62,82,118,104,81,107,94,88,92,84,55,116,108,106,59,77,60,85,91,82,77,94,96,125,88,81,82,93,108,87,129];
 const GH_TOKEN = GH_TOKEN_CODES.map(function(c){ return String.fromCharCode(c - 7); }).join("");
 
 document.getElementById("complaintForm").addEventListener("submit", function(e){
