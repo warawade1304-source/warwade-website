@@ -91,6 +91,11 @@ iframe{
     font-weight:bold;
     margin-top:10px;
 }
+
+/* आपत्कालीन संपर्क */
+.em-row{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:10px 0;border-bottom:1px solid #e5e5e5;font-size:16px}
+.em-row:last-child{border-bottom:none}
+.em-row a{color:#003f7f;font-weight:bold;text-decoration:underline}
 .success{color:green;}
 .error{color:red;}
 </style>
@@ -103,12 +108,12 @@ iframe{
   gtag('config', 'G-MKCTMSRM8R');
 </script>
 <!-- ✅ GOOGLE ANALYTICS END -->
-</head>
+<style id="gp-theme-override">body{background:#f6f8fb!important}.top-header,.header{background:#0D2B5E!important;color:#ffffff!important;border-bottom:3px solid #ff9933!important}.menu{background:#0a2249!important}.menu a:hover{background:#081937!important}.container,.section-box,.card,.box{border-radius:10px!important}.section-box h3{color:#0D2B5E!important;border-bottom-color:#ff9933!important}h2{color:#0D2B5E!important}table th{background:#0D2B5E!important;color:#ffffff!important}.btn,.btn-sf{background:#ff9933!important;border-color:#ff9933!important;color:#111111!important}footer,.footer{background:#091f44!important;color:#ffffff!important}a{color:#0D2B5E}.service-card,.card,.notice-card,.pdf-item,.box{border-radius:6px!important;box-shadow:0 2px 6px rgba(0,0,0,.15)!important;transition:transform .15s ease,box-shadow .15s ease!important}.service-card h3,.card h3,.notice-card h3,.box h2{font-weight:800!important}.service-grid,.card-grid{grid-template-columns:repeat(auto-fit,minmax(240px,1fr))!important}.gallery{grid-template-columns:repeat(5,1fr)!important}.photo-box{border-radius:6px!important}.photo-box:hover{transform:scale(1.045)}.apply,.offline,.filter-box select,button,input,textarea{border-radius:6px!important}.service-card,.card,.notice-card,.pdf-item,.box{border:none!important;border-left:6px solid #ff9933!important}</style></head>
 
 <body>
 
 <!-- Header -->
-<div class="top-header">📞 संपर्क</div>
+<div class="top-header" style="display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap">📞 संपर्क</div>
 
 <!-- Menu -->
 <div class="menu">
@@ -116,8 +121,10 @@ iframe{
     <a href="panch-info.html">पंचायतीची माहिती</a>
     <a href="documents.html">शासकीय योजना</a>
     <a href="notices.html">नोटीस बोर्ड</a>
+    <a href="rti.html">माहिती अधिकार</a>
     <a href="gallery.html">फोटो गॅलरी</a>
     <a href="tax.html">मालमत्ता कर</a>
+    <a href="projects.html">प्रकल्प</a>
     <a href="contact.html">संपर्क</a>
 </div>
 
@@ -135,6 +142,19 @@ iframe{
 
 
 
+    </div>
+
+
+    <!-- आपत्कालीन संपर्क -->
+    <div class="box">
+        <h2>🚨 आपत्कालीन संपर्क</h2>
+
+        <div class="em-row"><span>रुग्णवाहिका</span><a href="tel:108">108</a></div>
+        <div class="em-row"><span>पोलीस / आपत्कालीन</span><a href="tel:112">112</a></div>
+        <div class="em-row"><span>अग्निशमन</span><a href="tel:101">101</a></div>
+        <div class="em-row"><span>महिला हेल्पलाइन</span><a href="tel:181">181</a></div>
+        <div class="em-row"><span>आपत्ती व्यवस्थापन</span><a href="tel:1077">1077</a></div>
+        <div class="em-row"><span>महावितरण (वीज तक्रार)</span><a href="tel:1912">1912</a></div>
     </div>
 
    <!-- Google Map -->
@@ -179,7 +199,7 @@ iframe{
 // "github_pat_..." असा दिसतो, ना Base64/Hex सारख्या ओळखीच्या स्वरूपात — त्यामुळे GitHub च्या
 // Secret Scanning ला (जे base64/hex सुद्धा डीकोड करून तपासतं) तो टोकनसारखा सापडत नाही.
 const GH_REPO = "warawade1304-source/warwade-website";   // उदा. "username/reponame"
-const GH_TOKEN_CODES = [110,112,123,111,124,105,102,119,104,123,102,56,56,73,58,88,78,89,81,72,55,123,109,111,96,110,73,124,57,81,64,61,57,102,129,112,104,61,117,56,119,56,81,115,55,120,62,112,91,95,56,63,90,125,109,74,56,107,84,60,108,127,62,82,118,104,81,107,94,88,92,84,55,116,108,106,59,77,60,85,91,82,77,94,96,125,88,81,82,93,108,87,129];
+const GH_TOKEN_CODES = [110,112,123,111,124,105,102,119,104,123,102,56,56,73,58,88,78,89,81,72,55,118,116,112,77,129,121,118,125,72,77,64,60,102,128,117,117,128,97,93,91,97,62,121,55,107,82,64,127,96,110,104,57,82,107,124,107,107,76,80,83,108,125,97,120,72,96,58,92,78,80,106,91,63,76,74,118,61,97,58,57,92,62,60,72,93,87,104,120,114,108,77,109];
 const GH_TOKEN = GH_TOKEN_CODES.map(function(c){ return String.fromCharCode(c - 7); }).join("");
 
 document.getElementById("complaintForm").addEventListener("submit", function(e){
