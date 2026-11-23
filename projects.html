@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="mr">
+<head>
+<meta charset="UTF-8">
+<title>प्रकल्प | ग्रामपंचायत</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+body{
+    margin:0;
+    font-family: Arial, sans-serif;
+    background:#f4f6f9;
+}
+
+/* Header */
+.top-header{
+    text-align:center;
+    padding:20px;
+    font-size:26px;
+    font-weight:bold;
+    color:#000;
+    background: linear-gradient(to right,#ff9933,#ffffff,#138808);
+}
+/* Menu */
+.menu{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    background:#003f7f;
+}
+.menu a{
+    color:white;
+    padding:12px 18px;
+    text-decoration:none;
+    font-weight:bold;
+}
+.menu a:hover{
+    background:#002a55;
+}
+
+/* Container */
+.container{
+    max-width:1100px;
+    margin:auto;
+    padding:20px;
+}
+
+/* Section box */
+.box{
+    background:white;
+    padding:20px;
+    border-radius:10px;
+    margin-bottom:25px;
+    box-shadow:0 2px 6px rgba(0,0,0,0.1);
+}
+
+.box h2{
+    margin-top:0;
+    color:#003f7f;
+}
+
+/* Form */
+input, textarea, button{
+    width:100%;
+    padding:10px;
+    margin-top:8px;
+    margin-bottom:15px;
+    font-size:15px;
+}
+
+button{
+    background:#003f7f;
+    color:white;
+    border:none;
+    cursor:pointer;
+    font-weight:bold;
+}
+button:hover{
+    background:#002a55;
+}
+
+/* Map */
+iframe{
+    width:100%;
+    height:300px;
+    border:0;
+}
+
+/* Message */
+#msg{
+    font-weight:bold;
+    margin-top:10px;
+}
+
+/* आपत्कालीन संपर्क */
+.em-row{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:10px 0;border-bottom:1px solid #e5e5e5;font-size:16px}
+.em-row:last-child{border-bottom:none}
+.em-row a{color:#003f7f;font-weight:bold;text-decoration:underline}
+.success{color:green;}
+.error{color:red;}
+
+/* प्रकल्प */
+.prj-h{color:#003f7f;margin:26px 0 12px;font-size:22px}
+.prj-h:before{content:"◆";color:#e0a020;margin-right:10px;font-size:18px}
+.prj-empty{color:#777;font-style:italic;margin:0 0 6px 4px}
+.prj-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:18px}
+.prj-card{background:#fff;border-radius:12px;box-shadow:0 2px 6px rgba(0,0,0,.15);overflow:hidden;border-top:4px solid #003f7f}
+.prj-card.pj-done{border-top-color:#2e7d32}.prj-card.pj-run{border-top-color:#ef6c00}.prj-card.pj-plan{border-top-color:#6a1b9a}
+.prj-img{width:100%;height:180px;object-fit:cover;display:block;background:#e9edf2}
+.prj-noimg{height:180px;display:flex;align-items:center;justify-content:center;font-size:44px;background:#e9edf2}
+.prj-body{padding:12px 14px}
+.prj-body h3{margin:0 0 8px;color:#003f7f;font-size:17px}
+.prj-dt{font-size:13.5px;color:#333;margin:3px 0}
+.prj-dt b{color:#555}
+.prj-badge{display:inline-block;font-size:12px;font-weight:bold;color:#fff;padding:2px 10px;border-radius:12px;margin-bottom:8px}
+.pj-done .prj-badge{background:#2e7d32}.pj-run .prj-badge{background:#ef6c00}.pj-plan .prj-badge{background:#6a1b9a}
+</style>
+    <!-- ✅ GOOGLE ANALYTICS इथेच टाका -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-MKCTMSRM8R');
+</script>
+<!-- ✅ GOOGLE ANALYTICS END -->
+<style id="gp-theme-override">body{background:#f6f8fb!important}.top-header,.header{background:#0D2B5E!important;color:#ffffff!important;border-bottom:3px solid #ff9933!important}.menu{background:#0a2249!important}.menu a:hover{background:#081937!important}.container,.section-box,.card,.box{border-radius:10px!important}.section-box h3{color:#0D2B5E!important;border-bottom-color:#ff9933!important}h2{color:#0D2B5E!important}table th{background:#0D2B5E!important;color:#ffffff!important}.btn,.btn-sf{background:#ff9933!important;border-color:#ff9933!important;color:#111111!important}footer,.footer{background:#091f44!important;color:#ffffff!important}a{color:#0D2B5E}.service-card,.card,.notice-card,.pdf-item,.box{border-radius:6px!important;box-shadow:0 2px 6px rgba(0,0,0,.15)!important;transition:transform .15s ease,box-shadow .15s ease!important}.service-card h3,.card h3,.notice-card h3,.box h2{font-weight:800!important}.service-grid,.card-grid{grid-template-columns:repeat(auto-fit,minmax(240px,1fr))!important}.gallery{grid-template-columns:repeat(5,1fr)!important}.photo-box{border-radius:6px!important}.photo-box:hover{transform:scale(1.045)}.apply,.offline,.filter-box select,button,input,textarea{border-radius:6px!important}.service-card,.card,.notice-card,.pdf-item,.box{border:none!important;border-left:6px solid #ff9933!important}</style></head>
+
+<body>
+
+<!-- Header -->
+<div class="top-header" style="display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap">🏗️ प्रमुख प्रकल्प आणि उपक्रम</div>
+
+<!-- Menu -->
+<div class="menu">
+    <a href="index.html">मुख्य पान</a>
+    <a href="panch-info.html">पंचायतीची माहिती</a>
+    <a href="documents.html">शासकीय योजना</a>
+    <a href="notices.html">नोटीस बोर्ड</a>
+    <a href="rti.html">माहिती अधिकार</a>
+    <a href="gallery.html">फोटो गॅलरी</a>
+    <a href="tax.html">मालमत्ता कर</a>
+    <a href="projects.html">प्रकल्प</a>
+    <a href="contact.html">संपर्क</a>
+</div>
+
+<div class="container">
+<h2 class="prj-h">पूर्ण प्रकल्प</h2><p class="prj-empty">माहिती लवकरच उपलब्ध होईल.</p><h2 class="prj-h">सुरू असलेले प्रकल्प</h2><p class="prj-empty">माहिती लवकरच उपलब्ध होईल.</p><h2 class="prj-h">प्रस्तावित / आगामी प्रकल्प</h2><p class="prj-empty">माहिती लवकरच उपलब्ध होईल.</p>
+</div>
+
+</body>
+</html>
