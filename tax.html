@@ -83,16 +83,92 @@ body{font-family:Arial;background:#f3f7ff;margin:0}
     text-align:center
 }
 
-/* QR */
+/* भरायची रक्कम — मोठ्या अक्षरात, ठळक बॉक्स */
+.pay-box{
+    margin-top:14px;
+    padding:14px 16px;
+    border:2px solid #003f7f;
+    border-radius:10px;
+    background:#eaf3ff
+}
+.pay-box h4{margin:0 0 10px;text-align:center;color:#003f7f;font-size:16px}
+.pay-row{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:6px 4px;
+    font-size:18px;
+    font-weight:bold;
+    color:#003f7f;
+    border-bottom:1px solid #cfe0f5
+}
+.pay-row:last-of-type{border-bottom:none}
+.pay-amt{font-size:26px;color:#128807}
+.discount-badge{
+    margin-top:12px;
+    text-align:center;
+    background:linear-gradient(135deg,#fff4e6,#ffe9c7);
+    border:2px dashed #ff6600;
+    border-radius:12px;
+    padding:14px 12px;
+    color:#7a3e00;
+    line-height:1.6;
+    box-shadow:0 3px 10px rgba(255,102,0,.15)
+}
+.discount-badge .d-title{font-size:15px;font-weight:800;color:#c62828}
+.discount-badge .d-pct{font-size:12.5px;font-weight:600;margin-top:4px}
+.discount-badge .d-amt{font-size:30px;font-weight:900;color:#1b7a1b;margin-top:8px;text-shadow:0 1px 0 #fff}
+.discount-badge .d-full{font-size:11.5px;color:#8a6d3b;margin-top:2px;text-decoration:line-through;opacity:.8}
+.discount-badge .d-days{
+    display:inline-block;margin-top:10px;background:#c62828;color:#fff;font-size:12px;font-weight:700;
+    padding:4px 12px;border-radius:20px
+}
+
+/* QR — घरपट्टी आणि पाणीपट्टी हे दोन QR चुकून एकमेकांऐवजी स्कॅन होऊ नयेत म्हणून वेगवेगळ्या रंगाच्या,
+   वेगळ्या बॉक्समध्ये आणि मध्ये उभी रेघ टाकून स्पष्टपणे वेगळे दाखवतो. */
 .qr-box{
     display:flex;
-    justify-content:center;
-    gap:80px;
+    justify-content:space-between;
+    align-items:stretch;
+    gap:18px;
     margin-top:25px;
     flex-wrap:wrap
 }
-.qr-box img{width:170px}
-.qr-box div{text-align:center}
+.qr-card{
+    flex:1 1 200px;
+    max-width:230px;
+    text-align:center;
+    border-radius:12px;
+    padding:14px 10px;
+    box-shadow:0 2px 8px rgba(0,0,0,.12)
+}
+.qr-card.ghar{border:3px solid #ff6600;background:#fff8f0}
+.qr-card.pani{border:3px solid #003f7f;background:#eef5ff}
+.qr-card h4{margin:0 0 10px;font-size:16px}
+.qr-card img{width:170px;height:170px;object-fit:contain;background:#fff;border-radius:6px;padding:4px}
+.qr-warn{font-size:11.5px;font-weight:700;margin-top:6px}
+.qr-card.ghar .qr-warn{color:#c25200}
+.qr-card.pani .qr-warn{color:#003f7f}
+
+/* 📤 भरणा माहिती (UTR / स्क्रीनशॉट) पाठवा */
+.paid-ok{margin-top:18px;padding:16px;text-align:center;font-size:18px;font-weight:bold;color:#1b7a1b;background:#e8f7e8;border:2px solid #1b7a1b;border-radius:10px;line-height:1.7}
+.upi-btn{display:block;margin:10px auto 0;max-width:230px;background:#5f259f;color:#fff!important;text-decoration:none;border-radius:10px;padding:11px 8px;font-size:15px;font-weight:bold;box-shadow:0 2px 6px rgba(0,0,0,.2)}
+.upi-hint{font-size:11px;color:#555;margin-top:5px}
+.pay-send-btn{background:#128807;color:#fff;border:none;border-radius:10px;padding:13px 22px;font-size:17px;font-weight:bold;cursor:pointer;box-shadow:0 3px 8px rgba(0,0,0,.2)}
+.pay-send-btn:hover{background:#0d6a05}
+#payModal{display:none;position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:1000;align-items:flex-start;justify-content:center;padding:12px;overflow:auto}
+#payModal .pm-card{background:#fff;border-radius:12px;max-width:520px;width:100%;margin:auto;padding:16px 16px 18px;box-shadow:0 8px 30px rgba(0,0,0,.4)}
+#payModal h3{margin:0 0 4px;color:#003f7f;text-align:center}
+#payModal label{display:block;font-weight:bold;font-size:14px;margin:10px 0 3px;color:#222}
+#payModal input[type=text],#payModal input[type=tel],#payModal input[type=number]{width:100%;box-sizing:border-box;padding:10px;font-size:16px;border:2px solid #9bb7d8;border-radius:8px}
+#payModal .pm-sec{border:2px solid #cfe0f5;border-radius:10px;padding:4px 12px 12px;margin-top:12px;background:#f7fbff}
+#payModal .pm-sec h4{margin:8px 0 0;color:#003f7f}
+#payModal .pm-note{background:#fff8e1;border:1px solid #f0d58a;border-radius:8px;padding:8px 10px;font-size:12.5px;line-height:1.6;margin-top:10px;color:#6b4e00}#payModal .pm-alloc{font-size:12px;line-height:1.6;color:#0b5a2a;margin-top:4px}#payModal .pm-msg{margin-top:10px;font-size:14px;font-weight:bold}
+#payModal .pm-err{color:#c62828}#payModal .pm-ok{color:#1b7a1b}
+#payModal .pm-row{display:flex;gap:10px;margin-top:14px}
+#payModal .pm-row button{flex:1;padding:12px;font-size:16px;font-weight:bold;border-radius:8px;border:none;cursor:pointer}
+#payModal .pm-send{background:#128807;color:#fff}#payModal .pm-send[disabled]{opacity:.6}
+#payModal .pm-cancel{background:#e3e8ef;color:#222}
 </style>
     <!-- ✅ GOOGLE ANALYTICS इथेच टाका -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXX"></script>
@@ -103,20 +179,22 @@ body{font-family:Arial;background:#f3f7ff;margin:0}
   gtag('config', 'G-MKCTMSRM8R');
 </script>
 <!-- ✅ GOOGLE ANALYTICS END -->
-</head>
+<style id="gp-theme-override">body{background:#f6f8fb!important}.top-header,.header{background:#0D2B5E!important;color:#ffffff!important;border-bottom:3px solid #ff9933!important}.menu{background:#0a2249!important}.menu a:hover{background:#081937!important}.container,.section-box,.card,.box{border-radius:10px!important}.section-box h3{color:#0D2B5E!important;border-bottom-color:#ff9933!important}h2{color:#0D2B5E!important}table th{background:#0D2B5E!important;color:#ffffff!important}.btn,.btn-sf{background:#ff9933!important;border-color:#ff9933!important;color:#111111!important}footer,.footer{background:#091f44!important;color:#ffffff!important}a{color:#0D2B5E}.service-card,.card,.notice-card,.pdf-item,.box{border-radius:6px!important;box-shadow:0 2px 6px rgba(0,0,0,.15)!important;transition:transform .15s ease,box-shadow .15s ease!important}.service-card h3,.card h3,.notice-card h3,.box h2{font-weight:800!important}.service-grid,.card-grid{grid-template-columns:repeat(auto-fit,minmax(240px,1fr))!important}.gallery{grid-template-columns:repeat(5,1fr)!important}.photo-box{border-radius:6px!important}.photo-box:hover{transform:scale(1.045)}.apply,.offline,.filter-box select,button,input,textarea{border-radius:6px!important}.service-card,.card,.notice-card,.pdf-item,.box{border:none!important;border-left:6px solid #ff9933!important}</style></head>
 
 <body>
 
 <!-- Header -->
-<div class="top-header">💰 ग्रामपंचायत मालमत्ता कर माहिती</div>
+<div class="top-header" style="display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap">💰 ग्रामपंचायत मालमत्ता कर माहिती</div>
 <!-- Menu -->
 <div class="menu">
     <a href="index.html">मुख्य पान</a>
     <a href="panch-info.html">पंचायतीची माहिती</a>
     <a href="documents.html">शासकीय योजना</a>
     <a href="notices.html">नोटीस बोर्ड</a>
+    <a href="rti.html">माहिती अधिकार</a>
     <a href="gallery.html">फोटो गॅलरी</a>
     <a href="tax.html">मालमत्ता कर</a>
+    <a href="projects.html">प्रकल्प</a>
     <a href="contact.html">संपर्क</a>
 </div>
 
@@ -149,8 +227,56 @@ body{font-family:Arial;background:#f3f7ff;margin:0}
 
 <div id="result"></div>
 
+<!-- 📤 भरणा केल्यानंतर UTR / स्क्रीनशॉट थेट ग्रामपंचायतीला पाठवण्याचा फॉर्म -->
+<div id="payModal" onpointerdown="this._d=(event.target===this)" onclick="if(this._d&&event.target===this)closePay();this._d=false">
+ <div class="pm-card" id="pmCard">
+  <h3>📤 भरणा माहिती पाठवा</h3>
+  <div style="text-align:center;font-size:13px;color:#555">मिळकत क्र. <b id="pmNo"></b></div>
+  <div id="pmForm">
+   <label>भरणा करणाऱ्याचे नाव *</label><input type="text" id="pmName" maxlength="100">
+   <label>मोबाईल नंबर * (१० अंकी)</label><input type="tel" id="pmMob" inputmode="numeric" maxlength="10" placeholder="9XXXXXXXXX">
+   <label>WhatsApp नंबर * (पावती याच नंबरवर पाठवली जाईल)</label><input type="tel" id="pmWa" inputmode="numeric" maxlength="10" placeholder="9XXXXXXXXX">
+   <label style="display:flex;gap:8px;align-items:center;font-weight:600"><input type="checkbox" id="pmWaSame" style="width:auto" onchange="if(this.checked)document.getElementById('pmWa').value=document.getElementById('pmMob').value.replace(/\D/g,'')">वरील मोबाईल नंबरच WhatsApp आहे</label>
+   <div class="pm-note">ℹ️ पूर्ण रक्कम भरायची नसेल तर प्रत्यक्ष भरलेली (कमी) रक्कम खाली टाका. ती रक्कम आधी <b>मागील थकबाकीत</b> (घरपट्टी → दिवाबत्ती → आरोग्य → पडसर या क्रमाने), उरलेली <b>चालू</b> करात जमा होईल. सवलत फक्त सवलतीनंतरची पूर्ण रक्कम भरल्यासच लागू होते.</div>
+   <div class="pm-sec" id="pmGh"><h4>🏠 घरपट्टी</h4>
+     <label>भरलेली रक्कम ₹ (न भरल्यास 0)</label><input type="number" id="pmAmtGh" inputmode="numeric" min="0" oninput="pmAlloc()"><div class="pm-alloc" id="pmAllocGh"></div>
+     <label>UTR / व्यवहार क्रमांक</label><input type="text" id="pmUtrGh" inputmode="numeric" maxlength="30" placeholder="१२ अंकी UTR">
+     <label>पेमेंट स्क्रीनशॉट (UTR नसल्यास आवश्यक)</label><input type="file" id="pmShotGh" accept="image/*" onchange="pmPick(this,'gh')"><div class="pm-msg" id="pmSmGh"></div>
+   </div>
+   <div class="pm-sec" id="pmPa"><h4>💧 पाणीपट्टी</h4>
+     <label>भरलेली रक्कम ₹ (न भरल्यास 0)</label><input type="number" id="pmAmtPa" inputmode="numeric" min="0" oninput="pmAlloc()"><div class="pm-alloc" id="pmAllocPa"></div>
+     <label>UTR / व्यवहार क्रमांक</label><input type="text" id="pmUtrPa" inputmode="numeric" maxlength="30" placeholder="१२ अंकी UTR">
+     <label>पेमेंट स्क्रीनशॉट (UTR नसल्यास आवश्यक)</label><input type="file" id="pmShotPa" accept="image/*" onchange="pmPick(this,'pa')"><div class="pm-msg" id="pmSmPa"></div>
+   </div>
+   <div class="pm-msg" id="pmMsg"></div>
+   <div class="pm-row"><button class="pm-cancel" type="button" onclick="closePay()">रद्द करा</button><button class="pm-send" type="button" id="pmSend" onclick="sendPay()">📤 पाठवा</button></div>
+  </div>
+ </div>
+</div>
+
+<!-- 🔄 कर यादी + सवलत वेगळ्या tax-data.js फाईलमध्ये आहे आणि दर वेळी नवीन (cache टाळून) लोड होते — त्यामुळे पावती मंजूर केल्यावर जुनी (शिळी) रक्कम दिसत नाही. -->
+<script>document.write('<script src="tax-data.js?v='+Date.now()+'"><\/script>');</script>
 <script>
-let data=[{"अ.क्र":"1","मिळकत धारकाचे नाव":"सचिन उत्तम गायकवाड","मिळकत नंबर":"5","मागील घरपट्टी कर":"0","चालू घरपट्टी कर":"546","एकूण घरपट्टी कर":"546","मागील दिवाबत्ती कर":"40","चालू दिवाबत्ती कर":"20","एकूण दिवाबत्ती कर":"60","मागील आरोग्य कर":"40","चालू आरोग्य कर":"20","एकूण आरोग्य कर":"60","मागील पाणीपट्टी कर":"20","चालू पाणीपट्टी कर":"100","एकूण पाणीपट्टी कर":"120","मागील पडसर जमीन कर":"200","चालू पडसर जमीन कर":"79","एकूण पडसर जमीन कर":"279","मागील दंड कर":"0","चालू दंड कर":"0","एकूण दंड कर":"0","V":"300","चालू एकूण मागणी":"765","एकूण मागणी":"1065"}];
+
+/* 🎁 सवलत — सॉफ्टवेअरमध्ये निवडलेल्या तारीख-कालावधीशी आजची तारीख (वापरकर्त्याच्या ब्राऊझरमधली)
+   ताडून पाहतो — त्यामुळे कालावधी संपल्यावर पुन्हा "प्रकाशित करा" न दाबताही सवलत आपोआप बंद होते. */
+let __todayStr=new Date().toISOString().slice(0,10);
+let __discActive=!!(discountCfg&&discountCfg.enabled&&(!discountCfg.from||__todayStr>=discountCfg.from)&&(!discountCfg.to||__todayStr<=discountCfg.to));
+let __discPctMagil=__discActive?(+discountCfg.percent||0):0;
+let __discPctChalu=__discActive?(+discountCfg.percentChalu||0):0;
+// उरलेले दिवस — "अंतिम तारीख" आणि आजच्या तारखेतला फरक (पावतीवर तातडीची जाणीव करून देण्यासाठी)
+let __daysLeft=0;
+if(__discActive&&discountCfg.to){
+  let __toD=new Date(discountCfg.to+'T00:00:00'), __todD=new Date(__todayStr+'T00:00:00');
+  __daysLeft=Math.max(0,Math.round((__toD-__todD)/86400000));
+}
+// तारीख नेहमी dd/mm/yyyy याच स्वरूपात दाखवण्यासाठी (yyyy-mm-dd मधून रूपांतर) —
+function fmtDDMMYYYY(iso){
+  if(!iso)return '';
+  let p=String(iso).split('-');
+  if(p.length!==3)return iso;
+  return p[2]+'/'+p[1]+'/'+p[0];
+}
 
 /* 🔽 Dropdown fill – page load ला */
 window.onload = () => {
@@ -163,7 +289,9 @@ window.onload = () => {
    .forEach(r=>{
      let o = document.createElement("option");
      o.value = r["मिळकत नंबर"];
+     let bhog = r["भोगवटादाराचे नाव"];
      o.text  = r["मिळकत धारकाचे नाव"] +
+               (bhog && bhog!==r["मिळकत धारकाचे नाव"] ? " / भोगवटादार: " + bhog : "") +
                " (घर नं. " + r["मिळकत नंबर"] + ")";
      dd.appendChild(o);
    });
@@ -207,11 +335,121 @@ function selectName(){
   doSearch(); // जुनी search function call
 }
 
+
+/* 📤 भरणा माहिती (UTR / स्क्रीनशॉट) ग्रामपंचायतीला थेट पाठवणे — Firebase (Firestore) मध्ये जमा होते;
+   ग्रामपंचायत सॉफ्टवेअरमधील "नागरिक ॲप मागण्या" यादीत दिसते. Project ID/API key भरले नसतील तर हा फॉर्म दिसत नाही. */
+const WEB_FB={p:'warawade-gp',k:'AIzaSyAmoK_1zY6h5ml0VuLB2gjf6JvI_3BWoHE'};
+/* UPI लिंक — मोबाईलवर दाबल्यावर GPay / PhonePe / Paytm इ. ॲप रक्कम आणि नोंद भरलेल्या स्थितीत उघडते (QR स्कॅन पर्यायही कायम). */
+const UPI_CFG={gh:'',pa:'',gp:'वरवडे'};
+function upiOk(v){return !!v&&!/^__/.test(v)&&/^[\w.\-]{2,}@[A-Za-z]{2,}$/.test(v);}
+function upiBtn(kind,amt,ano){
+  var vpa=kind==='pa'?(upiOk(UPI_CFG.pa)?UPI_CFG.pa:UPI_CFG.gh):UPI_CFG.gh;
+  if(!upiOk(vpa)||!(+amt>0))return '';
+  var tn=(kind==='pa'?'Pani ':'Ghar ')+String(ano||'').replace(/[^A-Za-z0-9 \-]/g,'');
+  var u='upi://pay?pa='+encodeURIComponent(vpa)+'&pn='+encodeURIComponent((UPI_CFG.gp&&!/^__/.test(UPI_CFG.gp))?UPI_CFG.gp:'Grampanchayat')+'&am='+(Math.round(+amt*100)/100).toFixed(2)+'&cu=INR&tn='+encodeURIComponent(tn.trim());
+  return '<a class="upi-btn" href="'+u+'">📲 GPay / PhonePe ने भरा</a><div class="upi-hint">मोबाईलवर दाबा — रक्कम आपोआप भरलेली येईल</div>';
+}
+const WEB_FB_OK=!!(WEB_FB.p&&WEB_FB.k&&!/^__/.test(WEB_FB.p)&&!/^__/.test(WEB_FB.k));
+let __bills=[],__pmCur=null,__pmShot={gh:'',pa:''};
+
+function pmPick(inp,key){
+  __pmShot[key]='';let f=inp.files&&inp.files[0],sm=document.getElementById(key==='gh'?'pmSmGh':'pmSmPa');
+  if(!f){sm.textContent='';return;}
+  sm.className='pm-msg';sm.textContent='⏳ तयार करत आहे…';
+  let rd=new FileReader();
+  rd.onload=()=>{let im=new Image();
+    im.onload=()=>{let r=Math.min(1,1000/Math.max(im.width,im.height)),c=document.createElement('canvas');
+      c.width=Math.round(im.width*r);c.height=Math.round(im.height*r);
+      let x=c.getContext('2d');x.fillStyle='#fff';x.fillRect(0,0,c.width,c.height);x.drawImage(im,0,0,c.width,c.height);
+      let u=c.toDataURL('image/jpeg',0.7);if(u.length>260000)u=c.toDataURL('image/jpeg',0.45);
+      if(u.length>340000){sm.className='pm-msg pm-err';sm.textContent='❌ इमेज खूप मोठी आहे — दुसरा/लहान स्क्रीनशॉट निवडा';return;}
+      __pmShot[key]=u;sm.className='pm-msg pm-ok';sm.textContent='✅ स्क्रीनशॉट जोडला';};
+    im.onerror=()=>{sm.className='pm-msg pm-err';sm.textContent='❌ इमेज वाचता आली नाही';};
+    im.src=rd.result;};
+  rd.onerror=()=>{sm.className='pm-msg pm-err';sm.textContent='❌ इमेज वाचता आली नाही';};
+  rd.readAsDataURL(f);
+}
+function pmAllocLines(heads,amt){
+  let left=amt,pv=[],cu=[];
+  heads.forEach(h=>{let x=Math.min(left,h.p);if(x>0)pv.push(h.n+' ₹'+x);left-=x;});
+  heads.forEach(h=>{let x=Math.min(left,h.c);if(x>0)cu.push(h.n+' ₹'+x);left-=x;});
+  return {pv:pv,cu:cu,left:left};
+}
+function pmAlloc(){
+  let b=__pmCur;if(!b)return;
+  [['Gh','hg'],['Pa','wt']].forEach(([k,hk])=>{
+    let amt=Math.round(+document.getElementById('pmAmt'+k).value||0),el=document.getElementById('pmAlloc'+k),heads=b[hk],due=heads.reduce((t,h)=>t+h.p+h.c,0);
+    if(amt<=0){el.textContent='';return;}
+    if(amt>due){el.style.color='#c62828';el.textContent='⚠️ रक्कम शिल्लक (₹'+due+') पेक्षा जास्त आहे';return;}
+    el.style.color='';
+    let r=pmAllocLines(heads,amt),t=[];
+    if(r.pv.length)t.push('मागील थकबाकीत: '+r.pv.join(', '));if(r.cu.length)t.push('चालू करात: '+r.cu.join(', '));
+    let pay=(k==='Gh'?b.gh:b.pa),disc=(b.dpM||b.dpC)&&pay<due;
+    el.textContent=(amt===pay&&disc)?'✅ सवलतीसह पूर्ण भरणा — सवलत मिळेल आणि बाकी ₹ 0 होईल':'➜ '+t.join(' | ');
+    if(disc&&amt!==pay){let w=document.createElement('div');w.style.cssText='color:#c62828;font-weight:bold;margin-top:4px';
+      w.textContent='⚠️ सवलत योजना चालू आहे ('+(b.dpM?'मागील '+b.dpM+'% सूट':'')+(b.dpC?(b.dpM?' + ':'')+'चालू '+b.dpC+'% सूट':'')+'). ही सवलत फक्त सवलतीनंतरची पूर्ण रक्कम ₹'+pay+' भरल्यासच मिळते — रक्कम बदलली तर सवलत मिळणार नाही आणि भरलेली रक्कम मूळ (सवलतीशिवाय) थकबाकीत जमा होईल.';
+      el.appendChild(w);}
+  });
+}
+function pmMsg(t,ok){let m=document.getElementById('pmMsg');m.className='pm-msg '+(ok?'pm-ok':'pm-err');m.textContent=t||'';}
+function openPay(i){
+  let b=__bills[i];if(!b)return;__pmCur=b;__pmShot={gh:'',pa:''};
+  let card=document.getElementById('pmCard');
+  if(card.dataset.resetHtml){card.innerHTML=card.dataset.resetHtml;card.dataset.resetHtml='';}
+  document.getElementById('pmNo').textContent=b.no;
+  document.getElementById('pmName').value=b.name||'';document.getElementById('pmMob').value='';document.getElementById('pmWa').value='';document.getElementById('pmWaSame').checked=false;
+  ['Gh','Pa'].forEach(k=>{document.getElementById('pmUtr'+k).value='';document.getElementById('pmShot'+k).value='';document.getElementById('pmSm'+k).textContent='';});
+  document.getElementById('pmAmtGh').value=b.gh;document.getElementById('pmAmtPa').value=b.pa;
+  pmMsg('');document.getElementById('pmSend').disabled=false;pmAlloc();
+  document.getElementById('payModal').style.display='flex';
+}
+function closePay(){document.getElementById('payModal').style.display='none';}
+function pmFsEnc(v){return typeof v==='number'?(Number.isInteger(v)?{integerValue:String(v)}:{doubleValue:v}):{stringValue:String(v)};}
+function sendPay(){
+  let b=__pmCur;if(!b)return;
+  let name=document.getElementById('pmName').value.trim(),mob=document.getElementById('pmMob').value.replace(/\D/g,'');
+  if(!name)return pmMsg('⚠️ नाव टाका');
+  if(!/^[6-9]\d{9}$/.test(mob))return pmMsg('⚠️ बरोबर १० अंकी मोबाईल नंबर टाका');
+  let wa=document.getElementById('pmWa').value.replace(/\D/g,'');
+  if(!/^[6-9]\d{9}$/.test(wa))return pmMsg('⚠️ बरोबर १० अंकी WhatsApp नंबर टाका — पावती त्यावरच येईल');
+  let aG=Math.round(+document.getElementById('pmAmtGh').value||0),aP=Math.round(+document.getElementById('pmAmtPa').value||0);
+  if(aG<0||aP<0||aG>10000000||aP>10000000)return pmMsg('⚠️ रक्कम चुकीची आहे');
+  let dG=b.hg.reduce((t,h)=>t+h.p+h.c,0),dP=b.wt.reduce((t,h)=>t+h.p+h.c,0);
+  if(aG>dG)return pmMsg('⚠️ घरपट्टीची रक्कम शिल्लक (₹'+dG+') पेक्षा जास्त नको');
+  if(aP>dP)return pmMsg('⚠️ पाणीपट्टीची रक्कम शिल्लक (₹'+dP+') पेक्षा जास्त नको');
+  if(aG+aP<=0)return pmMsg('⚠️ घरपट्टी किंवा पाणीपट्टी — किमान एकाची भरलेली रक्कम टाका');
+  let uG=document.getElementById('pmUtrGh').value.trim(),uP=document.getElementById('pmUtrPa').value.trim();
+  if(aG>0&&!uG&&!__pmShot.gh)return pmMsg('⚠️ घरपट्टीसाठी UTR क्रमांक किंवा स्क्रीनशॉट द्या');
+  if(aP>0&&!uP&&!__pmShot.pa)return pmMsg('⚠️ पाणीपट्टीसाठी UTR क्रमांक किंवा स्क्रीनशॉट द्या');
+  if(uG&&!/^[A-Za-z0-9]{6,30}$/.test(uG))return pmMsg('⚠️ घरपट्टीचा UTR क्रमांक चुकीचा आहे (फक्त अक्षरे/अंक)');
+  if(uP&&!/^[A-Za-z0-9]{6,30}$/.test(uP))return pmMsg('⚠️ पाणीपट्टीचा UTR क्रमांक चुकीचा आहे (फक्त अक्षरे/अंक)');
+  let code='Web'+String(Math.floor(Math.random()*900000)+100000);
+  let d={kind:'tax',status:'paid_pending',src:'web',code:code,pno:String(b.no),name:name,mob:mob,wa:wa,
+    amtGh:aG,amtPa:aP,utrGh:aG>0?uG:'',utrPa:aP>0?uP:'',utr:[aG>0?uG:'',aP>0?uP:''].filter(Boolean).join(' / '),
+    amount:aG+aP,ts:new Date().toISOString()};
+  if(aG>0&&__pmShot.gh)d.shot=__pmShot.gh;
+  if(aP>0&&__pmShot.pa)d.shotPa=__pmShot.pa;
+  if(b.ano!=null&&b.ano!=='')d.ano=String(b.ano);if(b.anos)d.anos=String(b.anos);
+  if(b.dpM||b.dpC){d.dpM=b.dpM;d.dpC=b.dpC;}
+  let f={};Object.keys(d).forEach(k=>{f[k]=pmFsEnc(d[k]);});
+  let btn=document.getElementById('pmSend');btn.disabled=true;pmMsg('⏳ पाठवत आहे…',true);
+  fetch('https://firestore.googleapis.com/v1/projects/'+encodeURIComponent(WEB_FB.p)+'/databases/(default)/documents/gpapp_web?key='+encodeURIComponent(WEB_FB.k),
+    {method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({fields:f})})
+  .then(r=>{if(!r.ok)throw new Error('HTTP '+r.status);return r.json();})
+  .then(()=>{
+    let card=document.getElementById('pmCard');card.dataset.resetHtml=card.innerHTML;
+    card.innerHTML='<h3>✅ माहिती पाठवली</h3><p style="text-align:center;font-size:16px;line-height:1.7">तुमची भरणा माहिती ग्रामपंचायतीला मिळाली.<br>संदर्भ क्रमांक: <b>'+code+'</b><br>खात्यात रक्कम तपासून पावती दिली जाईल.</p>'
+      +'<div class="pm-row"><button class="pm-send" type="button" onclick="closePay()">ठीक आहे</button></div>';
+  })
+  .catch(()=>{btn.disabled=false;pmMsg('❌ पाठवता आले नाही — इंटरनेट तपासून पुन्हा प्रयत्न करा, किंवा ग्रामपंचायत कार्यालयाशी संपर्क साधा.');});
+}
+
 function doSearch(){
 let t=document.getElementById("searchInput").value.trim();
 let out="";
+__bills=[];
 
-data.filter(r=>r["मिळकत धारकाचे नाव"].includes(t)||r["मिळकत नंबर"] === t)
+data.filter(r=>r["मिळकत धारकाचे नाव"].includes(t)||(r["भोगवटादाराचे नाव"]&&r["भोगवटादाराचे नाव"].includes(t))||r["मिळकत नंबर"] === t)
 .forEach(r=>{
 
 let ph=+r["मागील घरपट्टी कर"], ch=+r["चालू घरपट्टी कर"];
@@ -223,15 +461,37 @@ let pp=+r["मागील पडसर जमीन कर"], cp=+r["चाल�
 let prevTotal=ph+pl+pa+pp+pw;
 let currTotal=ch+cl+ca+cp+cw;
 
-let gharQR = (ph+pl+pa+pp) + (ch+cl+ca+cp);
-let paniQR = pw + cw;
+/* 🎁 सवलत — मागील (थकबाकी) आणि चालू (या वर्षीचा) रकमेवर स्वतंत्र % लागू होतात. */
+let magilGhar=ph+pl+pa+pp, chaluGhar=ch+cl+ca+cp;
+let magilPani=pw, chaluPani=cw;
+let magilGharAfter=magilGhar*(1-__discPctMagil/100);
+let chaluGharAfter=chaluGhar*(1-__discPctChalu/100);
+let magilPaniAfter=magilPani*(1-__discPctMagil/100);
+let chaluPaniAfter=chaluPani*(1-__discPctChalu/100);
+let gharPayable=Math.round(chaluGharAfter+magilGharAfter);
+let paniPayable=Math.round(chaluPaniAfter+magilPaniAfter);
+let gharFull=Math.round(magilGhar+chaluGhar);
+let paniFull=Math.round(magilPani+chaluPani);
+let discountAmt=(gharFull+paniFull)-(gharPayable+paniPayable); /* सवलत = पूर्ण रक्कम − भरायची रक्कम (QR वरच्या रकमेशी नेहमी जुळते) */
+/* 🎁 सवलतीची फोड: मागील थकबाकीवरची सवलत "थकबाकी" रकान्यात, चालूवरची "चालू" रकान्यात (सॉफ्टवेअरच्या नमुना ९ प्रमाणेच) */
+let discPrev=Math.min(discountAmt,Math.round(magilGhar*__discPctMagil/100)+Math.round(magilPani*__discPctMagil/100));
+let discCurr=discountAmt-discPrev;
 
+/* QR वरची रक्कमही आता "भरायची" (सवलतीसह असल्यास सवलतीनंतरची) रक्कमच दाखवते, जेणेकरून
+   पावतीवरचा आकडा आणि QR स्कॅन करून भरायची रक्कम — दोन्ही जुळतील. */
+let gharQR = gharPayable;
+let paniQR = paniPayable;
+
+
+let allPaid=(gharQR+paniQR)<=0;
+let bi=__bills.length;__bills.push({no:r["मिळकत नंबर"],ano:r["ano"],anos:r["anos"]||"",name:r["मिळकत धारकाचे नाव"],gh:gharPayable,pa:paniPayable,hg:[{n:"घरपट्टी",p:ph,c:ch},{n:"दिवाबत्ती",p:pl,c:cl},{n:"आरोग्य",p:pa,c:ca},{n:"पडसर",p:pp,c:cp}],wt:[{n:"पाणीपट्टी",p:pw,c:cw}],dpM:__discPctMagil,dpC:__discPctChalu});
 
 out+=`
 <div class="bill-box">
 <h3 style="text-align:center;">नमुना 9(क) – कर बिल</h3>
 
 <p><b>नाव:</b> ${r["मिळकत धारकाचे नाव"]}</p>
+<p><b>भोगवटादाराचे नाव:</b> ${r["भोगवटादाराचे नाव"]||'स्वतः'}</p>
 <p><b>घर क्रमांक:</b> ${r["मिळकत नंबर"]}</p>
 
 <table class="table">
@@ -247,32 +507,52 @@ out+=`
 <td>${currTotal}</td>
 <td>${prevTotal+currTotal}</td>
 </tr>
+${(__discActive&&discountAmt>0)?`<tr style="font-weight:bold;color:#1b7a1b"><td colspan="2">🎁 सवलत (सूट)</td><td>- ${discPrev}</td><td>- ${discCurr}</td><td>- ${discountAmt}</td></tr>
+<tr style="font-weight:bold"><td colspan="2">सवलतीनंतर भरायची रक्कम</td><td>${prevTotal-discPrev}</td><td>${currTotal-discCurr}</td><td>${prevTotal+currTotal-discountAmt}</td></tr>`:''}
 </table>
 
-<div class="qr-box">
+<div class="pay-box">
+<h4>💵 प्रत्यक्ष भरायची रक्कम</h4>
+<div class="pay-row"><span>🏠 घरपट्टी</span><span class="pay-amt">₹ ${gharPayable}</span></div>
+<div class="pay-row"><span>💧 पाणीपट्टी</span><span class="pay-amt">₹ ${paniPayable}</span></div>
+${__discActive?(
+'<div class="discount-badge">'
++(discountCfg.note?'<div class="d-title">🎉 '+discountCfg.note.replace(/</g,'&lt;')+'</div>':'<div class="d-title">🎉 सध्या कर सवलत योजना लागू आहे!</div>')
++'<div class="d-pct">मागील थकबाकीवर '+__discPctMagil+'% सवलत'+(__discPctChalu?' + चालू रकमेवर '+__discPctChalu+'% सवलत':'')+'</div>'
++'<div class="d-amt">तुम्हाला ₹ '+discountAmt+' सवलत मिळाली!</div>'
++'<div class="d-pct">त्यापैकी: मागील थकबाकीवर ₹ '+discPrev+(__discPctChalu?' + चालू रकमेवर ₹ '+discCurr:'')+' सवलत</div>'
++'<div class="d-full">सवलतीशिवाय पूर्ण रक्कम ₹ '+(gharFull+paniFull)+'</div>'
++(discountCfg.to?('<div class="d-days">⏳ '+(__daysLeft>0?('फक्त आणखी '+__daysLeft+' दिवस बाकी'):'आजचा शेवटचा दिवस!')+' — दि. '+fmtDDMMYYYY(discountCfg.to)+' पर्यंत</div>'):'')
++'</div>'
+):''}
+</div>
 
-<div>
+${allPaid?`<div class="paid-ok">✅ या मालमत्तेचा संपूर्ण कर भरलेला आहे — शिल्लक ₹ 0.<br>ग्रामपंचायतीला सहकार्य केल्याबद्दल धन्यवाद!</div>`:`<div class="qr-box">
+
+${gharQR>0?`<div class="qr-card ghar">
 <h4>🏠 घरपट्टी QR</h4>
-<img src="" style="width:180px;height:180px;object-fit:contain">
-
+<img src="">
 <p style="font-weight:bold; margin-top:8px;"> ₹ ${gharQR}
 </p>
-</div>
+${upiBtn('gh',gharQR,r["ano"]||r["मिळकत नंबर"])}
+<div class="qr-warn">⚠️ फक्त घरपट्टीसाठीच वापरा</div>
+</div>`:''}
 
-<div>
+${paniQR>0?`<div class="qr-card pani">
 <h4>💧 पाणीपट्टी QR</h4>
-<img src="" style="width:180px;height:180px;object-fit:contain">
-
+<img src="">
 <p style="font-weight:bold; margin-top:8px;"> ₹ ${paniQR}
 </p>
+${upiBtn('pa',paniQR,r["ano"]||r["मिळकत नंबर"])}
+<div class="qr-warn">⚠️ फक्त पाणीपट्टीसाठीच वापरा</div>
+</div>`:''}
 
 </div>
 
-</div>
 
-
+${WEB_FB_OK?`<div style="text-align:center;margin:18px 0 6px"><button type="button" class="pay-send-btn" onclick="openPay(${bi})">📤 भरणा केला? UTR / स्क्रीनशॉट येथे पाठवा</button></div>`:''}
 <p> टीप :- १. वर दिलेला QR कोड स्कॅन करून घरपट्टी आणि पाणीपट्टी भरावी. नोट मध्ये मालमत्ता क्रमांक आणि नाव टाकावे. </p>
-<p> टीप :- २. ऑनलाईन भरणा केल्यानंतर स्क्रीनशॉट काढून ग्रामपंचायत कार्यालयाशी संपर्क साधून या व्हॉट्सअप वर पाठवावा. </p>
+${WEB_FB_OK?`<p> टीप :- २. ऑनलाईन भरणा केल्यानंतर वरील "UTR / स्क्रीनशॉट येथे पाठवा" बटण दाबून UTR क्रमांक आणि/किंवा स्क्रीनशॉट थेट ग्रामपंचायतीला पाठवावा.</p>`:`<p> टीप :- २. ऑनलाईन भरणा केल्यानंतर स्क्रीनशॉट काढून ग्रामपंचायत कार्यालयाशी संपर्क साधून या व्हॉट्सअप वर पाठवावा. </p>`}`}
 </div>`;
 });
 
